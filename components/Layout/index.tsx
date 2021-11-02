@@ -1,19 +1,19 @@
 import { Container, Stack } from '@mui/material'
 import { Box } from '@mui/system'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import Menu from './Menu'
 import Navbar from './Navbar'
 
 const Layout: FC = ({ children }) => {
-  return (
-    <Stack direction="row">
-      <Menu />
+  const [showMenu, setShowMenu] = useState(false)
 
-      <Box sx={{ flex: 1, bgcolor: '#FAFBFB', minHeight: '100vh' }}>
-        <Navbar />
-        <Container>
-          <Box p={2}>{children}</Box>
-        </Container>
+  return (
+    <Stack direction="row" sx={{ bgcolor: '#FAFBFB' }}>
+      <Menu show={showMenu} onClose={() => setShowMenu(false)} />
+
+      <Box mb={4} sx={{ flex: 1, minHeight: '100vh' }}>
+        <Navbar onToggleMenu={() => setShowMenu(!showMenu)} />
+        <Container>{children}</Container>
       </Box>
     </Stack>
   )

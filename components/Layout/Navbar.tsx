@@ -4,10 +4,14 @@ import { IconButton } from '@mui/material'
 
 import MenuIcon from '@mui/icons-material/Menu'
 
-const Navbar: FC = () => {
+interface IProps {
+  onToggleMenu: () => void
+}
+
+const Navbar: FC<IProps> = ({ onToggleMenu }) => {
   return (
     <Box p={2}>
-      <IconButton aria-label="menu">
+      <IconButton aria-label="menu" onClick={() => onToggleMenu()}>
         <MenuIcon />
       </IconButton>
     </Box>
