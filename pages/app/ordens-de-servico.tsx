@@ -79,7 +79,7 @@ type WorkOrder = {
 const types = [
   { label: 'Corretiva', value: 'corrective', color: 'error' },
   { label: 'Preditiva', value: 'predictive', color: 'info' },
-  { label: 'Preventiva ', value: 'preventiva', color: 'success' }
+  { label: 'Preventiva ', value: 'preventive', color: 'success' }
 ]
 
 const parseResponseToWorkOrder = (
@@ -248,8 +248,8 @@ const WorkOrdersPage: NextPage = () => {
                       </TableCell>
                       <TableCell>
                         <Chip
-                          label={workOrder.type.label}
-                          color={workOrder.type.color}
+                          label={workOrder.type?.label}
+                          color={workOrder.type?.color}
                           size="small"
                           variant="outlined"
                           disabled={workOrder.done}

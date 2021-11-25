@@ -91,7 +91,7 @@ type WorkOrder = {
 const types = [
   { label: 'Corretiva', value: 'corrective', color: 'error' },
   { label: 'Preditiva', value: 'predictive', color: 'info' },
-  { label: 'Preventiva ', value: 'preventiva', color: 'success' }
+  { label: 'Preventiva ', value: 'preventive', color: 'success' }
 ]
 
 const parseResponseToWorkOrder = (
